@@ -1,0 +1,247 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #D4AF37;
+}
+
+/* Barra de navegación */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #111;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background: #222;
+}
+
+/* Submenú */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background: #111;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 50px;
+    min-width: 150px;
+    z-index: 10;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li a {
+    padding: 10px 15px;
+}
+
+/* Galerías (index, hombres, mujeres) */
+section[class^="galeria"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 25px;
+}
+
+section[class^="galeria"] .item {
+    text-align: center;
+    width: 30%; /* 3 por fila */
+    min-width: 250px;
+}
+
+section[class^="galeria"] img {
+    width: 100%;
+    border: 2px solid #D4AF37;
+    border-radius: 5px;
+}
+
+/* Descripción debajo de cada imagen */
+section[class^="galeria"] p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #D4AF37;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    background: #111;
+    color: #D4AF37;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    section[class^="galeria"] .item {
+        width: 45%; /* 2 por fila */
+    }
+}
+
+@media (max-width: 600px) {
+    section[class^="galeria"] .item {
+        width: 90%; /* 1 por fila */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        padding: 12px;
+    }
+}
+/* ======== SECCIÓN CONTACTO ======== */
+.contacto-contenedor {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+}
+
+.contacto-descripcion {
+    margin-bottom: 25px;
+}
+
+/* INFO DIRECTA */
+.info-contacto {
+    background: #111;
+    border: 1px solid #D4AF37;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* REDES */
+.redes-contacto {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.redes-contacto a {
+    color: #D4AF37;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.redes-contacto a:hover {
+    color: #fff;
+}
+
+/* ======== FORMULARIO ======== */
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: auto;
+    max-width: 600px;
+}
+
+input, textarea {
+    background: #0c0c0c;
+    border: 1px solid #D4AF37;
+    border-radius: 5px;
+    padding: 12px;
+    color: #D4AF37;
+    font-size: 16px;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px #D4AF37;
+}
+
+/* BOTÓN */
+.btn-precio {
+    background: #111;
+    color: #D4AF37;
+    border: 2px solid #D4AF37;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-precio:hover {
+    background: #D4AF37;
+    color: #000;
+}
+
+/* ======== FOOTER ======== */
+footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    background: #111;
+    border-top: 1px solid #D4AF37;
+}
+
+footer a {
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .redes-contacto {
+        flex-wrap: wrap;
+    }
+
+    .contacto-contenedor {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    input, textarea {
+        font-size: 14px;
+    }
+
+    .btn-precio {
+        padding: 10px;
+    }
+}
