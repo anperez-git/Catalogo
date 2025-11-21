@@ -1,4 +1,6 @@
-/* Estilos generales */
+/* =========================
+   ESTILOS GENERALES
+========================= */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,120 +9,98 @@ body {
     color: #D4AF37;
 }
 
-/* Barra de navegación */
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 6px;
+}
+
+/* =========================
+   NAVEGACIÓN
+========================= */
 nav ul {
     list-style: none;
+    display: flex;
     margin: 0;
     padding: 0;
     background: #111;
-    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-}
-
-nav ul li {
-    position: relative;
 }
 
 nav ul li a {
     display: block;
-    padding: 15px 20px;
+    padding: 15px 25px;
     color: #D4AF37;
     text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 nav ul li a:hover {
-    background: #222;
-}
-
-/* Submenú */
-nav ul li ul {
-    display: none;
-    position: absolute;
-    background: #111;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    top: 50px;
-    min-width: 150px;
-    z-index: 10;
-}
-
-nav ul li:hover ul {
-    display: block;
-}
-
-nav ul li ul li a {
-    padding: 10px 15px;
-}
-/* Mejorar contenedor general de galerías */
-section[class^="galeria"] {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* Títulos, descripción y precio */
-.item h3 {
-    margin-top: 10px;
-    color: #D4AF37;
-    font-size: 18px;
-}
-
-.item .precio {
-    display: block;
-    margin-top: 8px;
-    font-weight: bold;
-    color: #000;
     background: #D4AF37;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-/* Descripción debajo de cada imagen */
-section[class^="galeria"] p {
-    margin-top: 10px;
-    font-size: 15px;
-    color: #D4AF37;
+    color: #000;
 }
 
-/* Footer */
-footer {
-    margin-top: 40px;
-    background: #111;
-    color: #D4AF37;
+/* =========================
+   GALERÍAS (HOME/HOMBRES/MUJERES)
+========================= */
+section[class^="galeria"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+}
+
+.item {
+    background: #0c0c0c;
+    border: 1px solid #D4AF37;
+    padding: 15px;
+    border-radius: 10px;
+    width: 30%; /* 3 por fila */
+    min-width: 260px;
     text-align: center;
-    padding: 20px;
+    transition: 0.3s;
 }
 
-footer a {
+.item:hover {
+    transform: scale(1.03);
+}
+
+.item h3 {
+    margin-top: 12px;
+}
+
+.item p {
+    margin: 8px 0 12px 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.btn-precio {
+    background: transparent;
     color: #D4AF37;
-    text-decoration: none;
+    border: 2px solid #D4AF37;
+    padding: 10px 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.btn-precio:hover {
+    background: #D4AF37;
+    color: #000;
+    box-shadow: 0 0 10px #D4AF37;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    section[class^="galeria"] .item {
-        width: 45%; /* 2 por fila */
-    }
-}
-
-@media (max-width: 600px) {
-    section[class^="galeria"] .item {
-        width: 90%; /* 1 por fila */
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li a {
-        padding: 12px;
-    }
-}
-/* ======== SECCIÓN CONTACTO ======== */
+/* =========================
+   CONTACTO
+========================= */
 .contacto-contenedor {
     max-width: 900px;
     margin: auto;
@@ -131,16 +111,15 @@ footer a:hover {
     margin-bottom: 25px;
 }
 
-/* INFO DIRECTA */
 .info-contacto {
-    background: #111;
+    background: #0c0c0c;
     border: 1px solid #D4AF37;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 20px;
     margin-bottom: 30px;
 }
 
-/* REDES */
+/* Redes */
 .redes-contacto {
     display: flex;
     justify-content: center;
@@ -151,15 +130,15 @@ footer a:hover {
 .redes-contacto a {
     color: #D4AF37;
     font-weight: bold;
-    text-decoration: none;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .redes-contacto a:hover {
     color: #fff;
 }
 
-/* ======== FORMULARIO ======== */
+/* Formulario */
 .formulario form {
     display: flex;
     flex-direction: column;
@@ -169,7 +148,7 @@ footer a:hover {
 }
 
 input, textarea {
-    background: #0c0c0c;
+    background: #111;
     border: 1px solid #D4AF37;
     border-radius: 5px;
     padding: 12px;
@@ -179,7 +158,6 @@ input, textarea {
 
 textarea {
     height: 120px;
-    resize: none;
 }
 
 input:focus, textarea:focus {
@@ -187,56 +165,60 @@ input:focus, textarea:focus {
     box-shadow: 0 0 10px #D4AF37;
 }
 
-/* BOTÓN */
-.btn-precio {
-    background: #111;
-    color: #D4AF37;
-    border: 2px solid #D4AF37;
-    padding: 12px;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-precio:hover {
-    background: #D4AF37;
-    color: #000;
-}
-
-/* ======== FOOTER ======== */
+/* =========================
+   FOOTER
+========================= */
 footer {
     margin-top: 40px;
-    padding: 20px 0;
+    padding: 20px;
     background: #111;
     border-top: 1px solid #D4AF37;
+    text-align: center;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+    list-style: none;
 }
 
 footer a {
     color: #D4AF37;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 footer a:hover {
     color: #fff;
 }
 
-/* Menu responsive */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li a {
-        width: 100%;
-        text-align: center;
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .item {
+        width: 45%; /* 2 por fila */
     }
 }
 
-/* Footer responsive */
 @media (max-width: 600px) {
-    .footer-links {
-        flex-wrap: wrap;
+    .item {
+        width: 90%; /* 1 por fila */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    input, textarea {
+        font-size: 14px;
+    }
+
+    .btn-precio {
+        padding: 8px 14px;
     }
 }
